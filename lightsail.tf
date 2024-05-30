@@ -20,6 +20,12 @@ resource "aws_lightsail_instance_public_ports" "node-a-public-ports" {
     protocol  = "tcp"
     cidrs     = ["0.0.0.0/0"]
   }
+  port_info {
+    from_port = 443
+    to_port   = 443
+    protocol  = "tcp"
+    cidrs     = ["0.0.0.0/0"]
+  }
 
   # k3s
   port_info {
