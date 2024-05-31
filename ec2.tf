@@ -62,8 +62,12 @@ resource "aws_security_group" "k3s-security-group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  # k3s
+  ingress {
+    from_port   = 2379
+    to_port     = 2380
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   ingress {
     from_port   = 6443
     to_port     = 6443
@@ -71,15 +75,33 @@ resource "aws_security_group" "k3s-security-group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    from_port   = 2379
-    to_port     = 2379
+    from_port   = 6443
+    to_port     = 6443
+    protocol    = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 8080
+    to_port     = 8081
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    from_port   = 2380
-    to_port     = 2380
+    from_port   = 10250
+    to_port     = 10250
     protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 51820
+    to_port     = 51821
+    protocol    = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "udp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 

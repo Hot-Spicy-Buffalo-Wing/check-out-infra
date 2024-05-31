@@ -36,12 +36,6 @@ resource "aws_lightsail_instance_public_ports" "node-a-public-ports" {
   }
   port_info {
     from_port = 2379
-    to_port   = 2379
-    protocol  = "tcp"
-    cidrs     = ["0.0.0.0/0"]
-  }
-  port_info {
-    from_port = 2380
     to_port   = 2380
     protocol  = "tcp"
     cidrs     = ["0.0.0.0/0"]
