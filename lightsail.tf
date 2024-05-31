@@ -47,3 +47,12 @@ resource "aws_lightsail_instance_public_ports" "node-a-public-ports" {
     cidrs     = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_lightsail_static_ip" "node-a-static-ip" {
+  name = "check-out-node-a-static-ip"
+}
+
+resource "aws_lightsail_static_ip_attachment" "node-a-static-ip" {
+  static_ip_name = aws_lightsail_static_ip.node-a-static-ip.name
+  instance_name  = aws_lightsail_instance.node-a.name
+}
