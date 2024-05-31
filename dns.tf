@@ -15,7 +15,7 @@ resource "cloudflare_record" "name" {
   for_each = local.domains
   zone_id  = var.cloudflare_zone_id
   name     = each.value
-  value    = aws_eip.k3s-static-ip[0].public_ip
+  value    = aws_lightsail_instance.node-a.public_ip_address
   proxied  = false
   type     = "A"
 }
