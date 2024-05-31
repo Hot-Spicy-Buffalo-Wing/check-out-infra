@@ -82,10 +82,13 @@ resource "aws_security_group" "k3s-security-group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
 
-resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.check-out-vpc.id
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
 
 resource "aws_eip" "k3s-static-ip" {
