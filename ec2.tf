@@ -30,7 +30,7 @@ resource "aws_instance" "k3s" {
     network_interface_id = aws_network_interface.check-out-network-interface[count.index].id
   }
 
-  tags = { Name = "k3s" }
+  tags = { Name = "k3s ${count.index}" }
 }
 
 resource "aws_network_interface" "check-out-network-interface" {
@@ -85,7 +85,7 @@ resource "aws_security_group" "k3s-security-group" {
 
   egress {
     from_port   = 0
-    to_port     = 0
+    to_port     = 65535
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
