@@ -103,3 +103,6 @@ output "k3s-static-ip" {
   value = aws_eip.k3s-static-ip[*].public_ip
 }
 
+output "k3s-private-ip" {
+  value = aws_instance.k3s[*].private_ip
+}
