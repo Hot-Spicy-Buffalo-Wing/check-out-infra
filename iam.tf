@@ -22,7 +22,7 @@ resource "aws_iam_policy" "github_ecr_push" {
           "ecr:UploadLayerPart",
           "ecr:CompleteLayerUpload"
         ],
-        Resource = "${each.value.arn}:*"
+        Resource = each.value.arn
       }
     ]
   })
