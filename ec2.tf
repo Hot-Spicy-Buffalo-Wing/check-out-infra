@@ -93,7 +93,7 @@ resource "aws_security_group" "k3s-security-group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    from_port   = 32432
+    from_port   = 32431
     to_port     = 32432
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
