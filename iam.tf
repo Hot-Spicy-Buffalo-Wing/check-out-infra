@@ -7,8 +7,14 @@ resource "aws_iam_policy" "github_ecr_push" {
       {
         Effect = "Allow",
         Action = [
-          "ecr:GetDownloadUrlForLayer",
           "ecr:GetAuthorizationToken",
+        ],
+        Resource = "*",
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "ecr:GetDownloadUrlForLayer",
           "ecr:BatchGetImage",
           "ecr:BatchCheckLayerAvailability",
           "ecr:PutImage",
