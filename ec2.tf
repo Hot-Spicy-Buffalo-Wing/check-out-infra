@@ -22,7 +22,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "k3s" {
   count         = 3
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t4g.small"
+  instance_type = "t4g.medium"
   key_name      = aws_key_pair.main_public_key.key_name
 
   network_interface {
