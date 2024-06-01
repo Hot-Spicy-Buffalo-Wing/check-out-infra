@@ -5,6 +5,7 @@ locals {
     "api.check-out",
     "dashboard.check-out",
     "minio.check-out",
+    "postgres.check-out",
   ])
 }
 
