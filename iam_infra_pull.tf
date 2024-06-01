@@ -6,6 +6,7 @@ resource "aws_iam_policy" "infra_ecr_pull" {
       {
         Effect = "Allow",
         Action = [
+          "ecr:GetAuthorizationToken",
           "ecr:BatchGetImage",
           "ecr:BatchCheckLayerAvailability",
           "ecr:CompleteLayerUpload",
