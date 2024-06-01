@@ -4,6 +4,7 @@ locals {
     "argo.check-out",
     "api.check-out",
     "dashboard.check-out",
+    "minio.check-out",
   ])
 }
 
