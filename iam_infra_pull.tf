@@ -44,7 +44,7 @@ resource "aws_iam_access_key" "github_pull" {
   user = aws_iam_user.github_pull.name
 }
 
-output "ecr_push_access_secret" {
+output "ecr_pull_access_secret" {
   value = {
     access_key = aws_iam_access_key.github_pull.id,
     secret_key = aws_iam_access_key.github_pull.secret
