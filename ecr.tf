@@ -2,6 +2,7 @@ locals {
   ecr_names = toset([
     "check-out-backend",
     "check-out-ai",
+    "check-out-frontend",
   ])
 }
 
